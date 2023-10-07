@@ -1,4 +1,6 @@
 #!/usr/bin/python3
 
 def magic_calculation(a, b):
-    return a**b + a
+    const = 98
+    res = a ** b
+    return const + res
