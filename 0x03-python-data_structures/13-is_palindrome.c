@@ -1,6 +1,37 @@
 #include "lists.h"
 
 /**
+ * reverse_from_middle - Reverses the second half of a list
+ * @head: head of list
+ *
+ * Return: New head of list
+ */
+listint_t *reverse_from_middle(listint_t *head)
+{
+	listint_t *fast, *slow, *h, *tmp;
+
+	fast = head;
+	slow = head;
+
+	while (fast && fast->next)
+	{
+		fast = fast->next->next;
+		slow = slow->next;
+	}
+
+	h = NULL;
+	while (slow)
+	{
+		tmp = slow;
+		slow = slow->next;
+		tmp->next = h;
+		h = tmp;
+	}
+
+	return (h);
+}
+
+/**
  * is_palindrome - Checks if a singly linked list is palindrome
  * @head: Pointer to head of list
  *
@@ -8,29 +39,21 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *begin, *end, *prev;
+	listint_t *p1, *p2;
 
 	if (!(*head) || !((*head)->next))
 		return (1);
 
-	begin = *head;
-	end = *head;
+	p1 = *head;
+	p2 = reverse_from_middle(p1);
 
-	while (end->next)
-		end = end->next;
-
-	while (begin != end && begin->next != end)
+	while (p2)
 	{
-		if (begin->n != end->n)
+		if (p1->n != p2->n)
 			return (0);
-		prev = begin;
-		while (prev->next != end)
-			prev = prev->next;
-		begin = begin->next;
-		end = prev;
-
+		p1 = p1->next;
+		p2 = p2->next;
 	}
-	if (begin->n == end->n)
-		return (1);
-	return (0);
+
+	return (1);
 }
