@@ -8,6 +8,5 @@ def main():
             print('{}'.format(x))
 
 
-
 if __name__ == '__main__':
     main()
