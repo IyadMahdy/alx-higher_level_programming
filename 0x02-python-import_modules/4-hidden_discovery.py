@@ -2,7 +2,7 @@
 def main():
     for x in dir(hidden_4):
         if x[:2] != '__':
-            print(x)
+            print('{}'.format(x))
 
 
 
