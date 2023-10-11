@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from calculator_1.py import *
+from calculator_1 import *
 
 
 def main():
