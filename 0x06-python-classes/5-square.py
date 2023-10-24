@@ -42,7 +42,7 @@ class Square:
         """
         prints a square with dimensions (size)
         """
-        if __size = 0:
+        if __size == 0:
             print()
         else:
             for i in range(__size):
