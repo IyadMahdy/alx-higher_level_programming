@@ -13,11 +13,11 @@ class Rectangle:
 
      def __str__(self):
         res = ""
-        if self.width not 0 and self.height not 0:
+        if self.width != 0 and self.height != 0:
             for i in range(self.height):
                 for j in range(self.width):
                     res += '#'
-                res += '\n' if i not self.height - 1
+                res += '\n' if i != self.height - 1 else ''
         return res
 
     @property
