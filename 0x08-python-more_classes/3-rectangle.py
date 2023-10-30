@@ -11,7 +11,7 @@ class Rectangle:
         self.width = width
         self.height = height
 
-     def __str__(self):
+    def __str__(self):
         res = ""
         if self.width != 0 and self.height != 0:
             for i in range(self.height):
