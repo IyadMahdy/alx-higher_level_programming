@@ -20,7 +20,7 @@ class Rectangle:
         if self.width != 0 and self.height != 0:
             for i in range(self.height):
                 for j in range(self.width):
-                    res += Rectangle.print_symbol
+                    res += str(self.print_symbol)
                 res += '\n' if i != self.height - 1 else ''
         return res
 
